@@ -27,6 +27,11 @@ img {
   padding: 10px 40px;
 }
 
+.content {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+
 .site_title a {
   width: 180px;
   line-height: 1px;
@@ -42,7 +47,6 @@ img {
 // HEADER
 
 #header {
- 
   width: 100%;
   height: 80px;
   background-color: #fff;
@@ -53,7 +57,6 @@ img {
   left: 0;
   right: 0;
   z-index: 10;
-  
 
   #navi {
     position: fixed;
@@ -65,14 +68,17 @@ img {
     transition: all 0.5s;
     z-index: 20;
     opacity: 0;
+
+    .navi_item {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
   }
-
-
 
   .toggle_btn {
     width: 30px;
     height: 30px;
-    
+
     position: relative;
     transition: all 0.5s;
     cursor: pointer;
@@ -91,60 +97,46 @@ img {
     span:nth-child(1) {
       top: 10px;
     }
-    // span:nth-child(1).open {
-    //   transform: translateY(4px) rotate(-45px);
-    // }
+
     span:nth-child(2) {
       bottom: 10px;
     }
-    // span:nth-child(2).open {
-    //   transform: translateY(-4px) rotate(45px);
-    // }
+
   }
-
-
 
   .mask {
     display: none;
     transition: all 0.5s;
-    // .open {
-    //   display: block;
-    //   position: fixed;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background: #000;
-    //   opacity: 0.8;
-    //   z-index: 10;
-    //   cursor: pointer;
-    // }
   }
-}
 
-.open .mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: 0.8;
-  z-index: 10;
-  cursor: pointer;
-}
+  .open.mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    z-index: 10;
+    cursor: pointer;
+  }
 
-.toggle_btn.open span:nth-child(1){
-  transform: translateY(4px) rotate(-45px);
-}
-.toggle_btn.open span:nth-child(2){
-  transform: translateY(-4px) rotate(45px);
-}
+  .toggle_btn.open span {
+    background-color: #fff;
+  }
 
-#navi .open {
-  left: 0;
-  opacity: 1;
+  .toggle_btn.open span:nth-child(1) {
+    transform: translateY(4px) rotate(-45deg);
+  }
+  .toggle_btn.open span:nth-child(2) {
+    transform: translateY(-4px) rotate(45deg);
+  }
+
+  #navi.open {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -152,7 +144,6 @@ img {
     width: 250px;
     line-height: 2px;
   }
-  
 }
 
 #top {
@@ -186,6 +177,15 @@ img {
   font-size: 1.6rem;
 }
 
+.toc {
+  display: flex;
+  justify-content: center;
+
+  li {
+    padding: 0 20px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .products_item {
     width: 47%;
@@ -206,6 +206,149 @@ img {
     li {
       margin-right: 30px;
       font-size: 1.2rem;
+      line-height: 2rem;
     }
   }
+
+  .copy {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer_list {
+    flex-direction: column;
+  }
+}
+
+// ITEM
+
+.item_list {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.item_img {
+  width: 50%;
+}
+
+.item_disc {
+  width: 45%;
+
+  p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+
+    dt {
+      font-weight: normal;
+      width: 30%;
+      margin-bottom: 10px;
+    }
+    dd {
+      width: 70%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .item_list {
+    flex-direction: column;
+  }
+
+  .item_img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .item_disc {
+    width: 100%;
+  }
+}
+
+// ABOUT
+
+.about_disc {
+  max-width: 600px;
+
+  p {
+    font-size: 1.4rem;
+    line-height: 2;
+    margin-bottom: 30px;
+  }
+}
+
+// COMPANY
+
+.company_list {
+  max-width: 600px;
+}
+
+.company_info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  font-size: 1.4rem;
+
+  dt {
+    font-weight: normal;
+    width: 30%;
+    padding: 20px 10px;
+    border-bottom: 1px solid #DCDBDB;
+  }
+
+  dt:last-of-type {
+    border-bottom: none;
+  }
+
+  dd {
+    width: 70%;
+    padding: 20px 10px;
+    border-bottom: 1px solid #DCDBDB;
+  }
+
+  dd:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.company_map {
+  filter: grayscale(1);
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .company_info {
+    flex-direction: column;
+
+    dt {
+      width: 100%;
+      border-top: 1px solid #DCDBDB;
+      border-bottom: none;
+      padding-bottom: 5px;
+    }
+
+    dd {
+      width: 100%;
+      border-bottom: none;
+      padding-top: 5px;
+    }
+  }
+
+
 }
