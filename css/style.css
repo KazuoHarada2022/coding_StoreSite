@@ -146,13 +146,6 @@ img {
   opacity: 1;
 }
 
-@media screen and (max-width: 900px) {
-  .site_title a {
-    width: 250px;
-    line-height: 2px;
-  }
-}
-
 #top {
   padding-top: 80px;
   padding-bottom: 160px;
